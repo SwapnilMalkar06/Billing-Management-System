@@ -1,14 +1,178 @@
-<div align="center"><h1>🛍️ Billing & Inventory Management System (Swapnil)</h1><p><b>A robust, full-stack desktop application designed for high-speed billing and dynamic inventory management.</b></p><p><a href="#-key-features">Key Features</a> •<a href="#-technology-stack">Tech Stack</a> •<a href="#-installation--setup">Installation</a> •<a href="#-default-credentials">Credentials</a></p></div>📝 Project OverviewThis system is tailored for seasonal shops (e.g., festival goods, clothing, firecrackers) that require offline reliability and fast processing. It bridges the gap between complex ERPs and manual bookkeeping by providing a simple, user-friendly interface for:High-Speed Billing (Point of Sale)Real-time Stock TrackingBusiness Analytics🚀 Key Features🛒 Point of Sale (POS) & BillingFast Billing: Instant product search and cart management using a responsive interface. Automated Calculations: Automatically calculates GST (Tax) and Grand Totals in real-time. Professional Invoicing: Generates printable PDF invoices with a clean, grid-based layout using ReportLab. Cart Management: Add, remove, and clear items easily before checkout.📦 Inventory ManagementReal-time Tracking: Monitor stock levels instantly to prevent shortages. Low Stock Alerts: Visual red highlights in the inventory table when items dip below minimum stock levels. Bulk Import: Support for .csv imports to quickly load inventory before a busy season. CRUD Operations: Add, update, and delete products seamlessly.📊 Analytics & ReportingVisual Insights: Daily sales graphs powered by Matplotlib. Sales Summaries: Track total revenue and total invoices generated. Data Export: Export detailed sales reports to Excel/CSV for external analysis.🔐 User SecurityRole-Based Access: Separate panels for Admin (Full Access) and Staff (Billing Only). Secure Authentication: Passwords are hashed using SHA-256 before storage.🛠️ Technology StackComponentTechnologyDescriptionLanguagePython 3.xCore logic and backend processing.GUITkinterNative desktop interface (Themed Widgets).DatabaseMySQLRobust relational database for data persistence.ReportingReportLabPDF generation for invoices.AnalyticsPandas & MatplotlibData manipulation and visualization.⚙️ Installation & SetupPrerequisitesPython 3.10+ installed.MySQL Server installed and running.Step 1: Clone the Repositorygit clone [https://github.com/yourusername/billing-system.git](https://github.com/yourusername/billing-system.git)
-cd billing-system
-Step 2: Install DependenciesInstall the required Python packages using pip:pip install pandas matplotlib reportlab mysql-connector-python
-Step 3: Database ConfigurationEnsure your MySQL server is running.Open database.py and update the connection settings if your credentials differ from the defaults:self.host = "localhost"
-self.user = "root"      # Default: root
-self.password = "852456" # Default: 852456
-Auto-Setup: The application will automatically create the database shop_inventory and required tables on the first run.Step 4: Run the Applicationpython main.py
-🔑 Default CredentialsUse the following credentials to log in for the first time:<div align="center">RoleUsernamePasswordAdminadminadmin123</div>Note: You can create additional users (Staff/Admin) from the Admin panel after logging in.📂 Project Structurebilling-system/
-├── main.py            # Entry point: GUI, Event Handling, PDF Generation
-├── database.py        # Backend: MySQL Connection, Auth, Inventory Logic
-├── requirements.txt   # Dependencies list
-├── invoices/          # Folder where PDF receipts are saved automatically
-└── README.md          # Project Documentation
-📸 Screenshots<div align="center"><!-- Replace the src with actual screenshot URLs when available --><img src="https://www.google.com/search?q=https://via.placeholder.com/600x400%3Ftext%3DBilling%2BDashboard" alt="Billing Dashboard" width="45%"><img src="https://www.google.com/search?q=https://via.placeholder.com/600x400%3Ftext%3DInventory%2BManagement" alt="Inventory Management" width="45%"></div>📝 LicenseThis project is open-source and available under the MIT License.<div align="center"><sub>Built with ❤️ by Swapnil</sub></div>
+<div align="center">
+<h1>🛍️ Billing & Inventory Management System (Swapnil)</h1>
+<p>
+<b>A full-stack, offline desktop application tailored for high-speed seasonal retail.</b>
+</p>
+
+<p>
+<a href="https://www.python.org/">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Python-3.10%252B-blue%3Fstyle%3Dflat%26logo%3Dpython%26logoColor%3Dwhite" alt="Python">
+</a>
+<a href="https://www.mysql.com/">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/MySQL-8.0%252B-00758F%3Fstyle%3Dflat%26logo%3Dmysql%26logoColor%3Dwhite" alt="MySQL">
+</a>
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/GUI-Tkinter-green%3Fstyle%3Dflat" alt="Tkinter">
+<img src="https://www.google.com/search?q=https://img.shields.io/badge/Status-Active-success%3Fstyle%3Dflat" alt="Status">
+</p>
+
+</div>
+
+<br />
+
+📋 Table of Contents
+
+Overview
+
+Key Features
+
+Technology Stack
+
+Getting Started
+
+Prerequisites
+
+Installation
+
+Configuration
+
+Usage Guide
+
+Project Structure
+
+License
+
+<br />
+
+📖 Overview
+
+This system is specifically designed for seasonal shops (e.g., festival
+ goods, clothing, firecrackers) located in regions like Sangli, Maharashtra,
+ where offline reliability and speed are critical. It replaces manual
+  bookkeeping with a digitized, automated workflow.
+
+  Primary Goal: Enable high-speed billing during peak seasons while tracking
+   inventory in real-time.
+
+   <br />
+
+🚀 Key Features
+🛒 Point of Sale (POS)
+
+Instant Search: Find products by name or ID instantly.
+
+Auto-Calculation: Real-time computation of Subtotal, GST, and Grand Total.
+
+PDF Invoicing: Generates professional, grid-based PDF receipts using
+ ReportLab.
+
+Cart Controls: Dynamic quantity adjustments and item removal.
+
+📦 Inventory Control
+
+Real-time Tracking: Stock levels update automatically after every sale.
+
+Visual Alerts: Rows turn <span style="color:red">red</span> when stock dips
+ below the minimum threshold.
+
+Bulk Import: Import thousands of items via .csv to set up the shop in minutes.
+
+📊 Analytics & Insights
+
+Sales Dashboard: View total revenue and transaction counts.
+
+Visual Graphs: Daily sales performance visualized with Matplotlib.
+
+Export Data: Download detailed reports to Excel/CSV for further analysis.
+
+🔐 Security
+
+Role-Based Access: - Admin: Full access to inventory, users, and reports.
+
+Staff: Restricted to billing functions only.
+
+Encryption: Passwords are hashed using SHA-256.
+
+<br />
+
+🛠️ Technology Stack
+
+Language : Python 3.x
+
+Interface : Tkinter
+
+Database : MySQL
+
+Reports : ReportLab PDF Invoice Generation
+
+Analytics : Pandas / Matplotlib
+
+<br />
+
+⚡ Getting Started
+
+Prerequisites
+
+Python 3.10+
+
+MySQL Server (Running locally or remotely)
+
+Installation
+
+1. Clone the Repository
+    git clone [https://github.com/yourusername/billing-system.git](https://
+    github.com/yourusername/billing-system.git)
+    cd billing-system
+    
+2. Install Dependancies 
+    pip install pandas matplotlib reportlab mysql-connector-python
+Configuration
+    1. Open database.py.
+    2. Update the MySQL connection settings to match your local server:
+        self.host = "localhost"
+        self.user = "root"       # Update if different
+        self.password = "852456" # Update if different
+
+3. Run the app 
+    python main.py
+
+Note: The database shop_inventory and all tables are created automatically on
+ the first run.
+
+<br/>
+
+🔑 Usage Guide
+
+Default Login 
+Upon first launch use the folloeing credentials to access te system : 
+    username : admin 
+    password : admin123
+
+Common Workflows
+
+1. Adding Stock: Login as Admin → Go to Inventory → Click Import CSV or Add 
+New Item.
+
+2. Billing: Login as Staff/Admin → Go to Billing → Search Item → Add to Cart
+→ Click Generate Bill.
+
+3. Viewing Reports: Go to Analytics → Click Show Sales Summary.
+
+<br />
+
+📂 Project Structure
+billing-system/
+├── invoices/           # 📄 Generated PDF receipts stored here
+├── main.py             # 🖥️ Main GUI application & Event logic
+├── database.py         # 🗄️ Database connection & Query logic
+├── requirements.txt    # 📦 List of python dependencies
+└── README.md           # 📘 Project documentation
+
+<br/>
+
+📝 License
+
+This project is open-source and available under the MIT License.
+
+<div align="center">
+<sub>Designed & Developed by Swapnil</sub>
+</div>
